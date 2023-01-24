@@ -1,12 +1,8 @@
-// Create a method for making a guess
-// Accept a char for guessing
-// Add unique guesses to list of guesses
-// Decrement guesses left if a unique guess isn't a match
-
 const Hangman = function(word, guesses) {
   this.word = word.toLowerCase().split("");
   this.guesses = guesses;
   this.guessedLetters = [];
+  this.status = "playing";
 }
 
 Hangman.prototype.getPuzzle = function() {
@@ -15,18 +11,24 @@ Hangman.prototype.getPuzzle = function() {
     else if (!this.guessedLetters.includes(letter)) return "*" 
     else return letter
   }).join("");
-  console.log(this.word)
-  return this.word.join("")
 }
 
 Hangman.prototype.makeGuess = function(letter) {
   const guess = letter.toLowerCase();
-  if (!this.guessedLetters.contains(guess)) this.guessedLetters.push(guess);
-  // below - have to check that the guess we're checking is unique AND is a bad guess
-  if (!this.word.contains(guess)) this.guesses--;
+  if (!this.guessedLetters.includes(guess)) {
+    this.guessedLetters.push(guess);
+    if (!this.word.includes(guess)) this.guesses--;
+  }
 }
 
-const game1 = new Hangman("bean", 6);
-const game2 = new Hangman("peanut b", 10);
+Hangman.prototype.getStatus = function(guessedWord) {
+  // if guesses reach 0 and person hasn't guessed the word then they fail
+  // if the visible guessed word matches the input word, status is finished
+  // otherwise player is still playing 
+  if (guessedWord !== this.word.join("") && this.guesses === 0) {
+    this.status = "failed";
+  } else if (guessedWord === this.word.join("")) {
+    this.status = "finished"
+  }
+}
 
-console.log(game1.getPuzzle());
