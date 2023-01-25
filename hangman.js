@@ -32,3 +32,13 @@ Hangman.prototype.getStatus = function(guessedWord) {
   }
 }
 
+Hangman.prototype.displayStatus = function() {
+  if (this.status === "playing") {
+    return `Guesses left: ${this.guesses}`
+  } else if (this.status === "finished") {
+    return `Great work! You guessed the word`
+  } else {
+    return `Nice try! The word was "${this.word.join("")}"`
+  }
+}
+
