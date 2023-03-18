@@ -5,7 +5,7 @@ class Hangman {
     this.guessedLetters = [];
     this.status = "playing";
   }
-  getPuzzle() {
+  get getPuzzle() {
     return this.word.map((letter) => {
       if (letter === " ") return " "
       else if (!this.guessedLetters.includes(letter)) return "*" 
@@ -29,7 +29,7 @@ class Hangman {
       this.status = "finished"
     }
   }
-  displayStatus() {
+  get displayStatus() {
     if (this.status === "playing") {
       return `Guesses left: ${this.guesses}`
     } else if (this.status === "finished") {
