@@ -25,3 +25,6 @@ window.addEventListener("keypress", (e) => {
 
 })
 
+getPuzzle((puzzle) => {
+  console.log(puzzle)
+})
