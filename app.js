@@ -25,6 +25,10 @@ window.addEventListener("keypress", (e) => {
 
 })
 
-getPuzzle((puzzle) => {
-  console.log(puzzle)
+getPuzzle((error, puzzle) => {
+  if (error) {
+    console.error(`Error: ${error}`)
+  } else {
+    console.log(puzzle);
+  }
 })
