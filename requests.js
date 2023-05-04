@@ -12,6 +12,7 @@ const getPuzzle = (callback) => {
 
   request.open("GET", "https://puzzle.mead.io/puzzle?wordCount=3");
   request.send();
+  
 }
 
 
