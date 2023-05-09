@@ -32,3 +32,15 @@ getPuzzle((error, puzzle) => {
     console.log(puzzle);
   }
 })
+
+// Create a new function for getting country details
+// Call it with two arguments: country code, the callback function
+// Make the HTTP req and call the callback with country info
+// Use the cb to print the country name
+getCountry("US", (error, country) => {
+  if (error) {
+    console.error(`Error: ${error}`)
+  } else {
+    console.log(`Country name: ${country.name.common}`)
+  }
+})
