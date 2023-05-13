@@ -27,16 +27,24 @@ window.addEventListener("keypress", (e) => {
 
 getPuzzle('4').then((puzzle) => {
   console.log(puzzle)
-}, (err) => {
-  console.log(`Error: ${err}`)
+}).catch((err) => {
+  console.log(err);
 })
 
-// Create a new function for getting country details
-// Call it with two arguments: country code, the callback function
-// Make the HTTP req and call the callback with country info
-// Use the cb to print the country name
-getCountry("US").then((country) => {
-  console.log(country.name.common)
-}, (err) => {
-  console.log(`Error: ${err}`)
+getCountry("MX").then((country) => {
+  console.log(country)
+}).catch((err) => {
+  console.log(err)
 })
+
+// fetch(`https://puzzle.mead.io/puzzle`, {}).then((response) => {
+//   if (response.status === 200) {
+//     return response.json()
+//   } else {
+//     throw new Error('Unable to fetch the puzzle');
+//   }
+// }).then((data) => {
+//   console.log(data.puzzle)
+// }).catch((err) => {
+//   console.log(err)
+// })
