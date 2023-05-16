@@ -39,7 +39,13 @@ getCountry("MX").then((country) => {
 
 
 getLocation().then((data) => {
-  console.log(data)
+  console.log(`State: ${data.city}; Region: ${data.region}; Country: ${data.country}`)
 }).catch((err) => {
   console.log(`Error: ${err}`)
+})
+
+getCurrentCountry().then((country) => {
+  console.log(country)
+}).catch((err) => {
+  console.log(err)
 })
