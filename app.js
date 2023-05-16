@@ -37,3 +37,12 @@ getCountry("MX").then((country) => {
   console.log(err)
 })
 
+// Create getLocation fxn which takes no arguments
+// Setup getLocation to make a request to our url and parse the data
+// Use getLocation to print the city, region, and country info
+
+getLocation().then((data) => {
+  console.log(data)
+}).catch((err) => {
+  console.log(`Error: ${err}`)
+})
