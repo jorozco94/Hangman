@@ -44,8 +44,8 @@ getLocation().then((data) => {
   console.log(`Error: ${err}`)
 })
 
-getCurrentCountry().then((country) => {
-  console.log(country)
-}).catch((err) => {
-  console.log(err)
-})
+// getCurrentCountry().then((country) => {
+//   console.log(country)
+// }).catch((err) => {
+//   console.log(err)
+// })
