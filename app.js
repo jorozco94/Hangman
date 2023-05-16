@@ -37,14 +37,3 @@ getCountry("MX").then((country) => {
   console.log(err)
 })
 
-// fetch(`https://puzzle.mead.io/puzzle`, {}).then((response) => {
-//   if (response.status === 200) {
-//     return response.json()
-//   } else {
-//     throw new Error('Unable to fetch the puzzle');
-//   }
-// }).then((data) => {
-//   console.log(data.puzzle)
-// }).catch((err) => {
-//   console.log(err)
-// })
