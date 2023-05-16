@@ -21,8 +21,6 @@ const getCountry = (countryCode) => {
     return data.find((country) => {
       return country.cca2 === countryCode;
     }).name.common;
-  }).catch((err) => {
-    console.log(err)
   })
 }
 
@@ -35,7 +33,5 @@ const getLocation = () => {
     }
   }).then((data) => {
     return `State: ${data.city}; Region: ${data.region}; Country: ${data.country}`
-  }).catch((err) => {
-    console.log(err);
   })
 }

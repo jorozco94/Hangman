@@ -28,13 +28,13 @@ window.addEventListener("keypress", (e) => {
 getPuzzle('4').then((puzzle) => {
   console.log(puzzle)
 }).catch((err) => {
-  console.log(err);
+  console.log(`Error: ${err}`);
 })
 
 getCountry("MX").then((country) => {
   console.log(country)
 }).catch((err) => {
-  console.log(err)
+  console.log(`Error: ${err}`)
 })
 
 // Create getLocation fxn which takes no arguments
