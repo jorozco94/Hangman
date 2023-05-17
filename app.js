@@ -13,8 +13,7 @@ window.addEventListener("keypress", (e) => {
   // log the remaining guesses/puzzle
   const guessedPuzzle = game1.getPuzzle;
   game1.getStatus(guessedPuzzle);
-  puzzleEl.innerText = guessedPuzzle
-  guessesEl.innerText = game1.displayStatus;
+  render();
 
 })
 
